@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jesús Briceño — Desarrollador</title>
+  <meta name="description" content="Jesús Briceño. Desarrollador apasionado, trabajo con distintas tecnologías y me gusta aprender e investigar en el mundo del desarrollo y la IA.">
+  <meta property="og:title" content="Jesús Briceño — Desarrollador">
+  <meta property="og:description" content="Desarrollador apasionado. Distintas tecnologías, mucha curiosidad, foco en desarrollo e IA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jesusjbriceno.dev/">
+  <link rel="canonical" href="https://jesusjbriceno.dev/">
+  <link rel="stylesheet" href="/css/board.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B3B2E'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23D9B45B' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23D9B45B'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!--
+IMPECCABLE DIRECTION CONTRACT — seed 7b69ad24
+THESIS: the person is the circuit — this page is the fabrication sheet of a human being, U1. It refuses the category-default hero-plus-cards portfolio.
+OWN-WORLD: deep solder-mask green board, silkscreen off-white ink, immersion-gold pads as the only active color; DIP-switch language selector, test-point contact links, pin-labeled IC hero, title-block corners, fiducials.
+STORY: visitor lands on a fab sheet, reads U1 (Jesús) in the first viewport, understands what he does and how he thinks, then makes contact by probing a gold test point.
+FIRST VIEWPORT: full-bleed board. Silkscreen top strip carries board name, revision and the ES/EN DIP switch. Center-left: the U1 IC footprint — name in huge Chakra Petch inside a pad frame with pin-1 dot and keyword pins. Right: a spec table (DEVICE / FUNCTION / MODE / FIELD / STATUS). Gold clock pulse travels the trace downward; primary contact points sit one trace-length below.
+FORM: assigned direction, rank 5 of 7 grounded candidates. Seed key 7b69ad24.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
+-->
+
+<div class="board">
+
+  <!-- ══ SILKSCREEN TOP STRIP ══ -->
+  <header class="silk-strip">
+    <div class="silk-strip__id">
+      <span class="silk-strip__board">JB·DEV</span>
+      <span class="silk-strip__rev">REV A · 2026</span>
+    </div>
+    <div class="silk-strip__lang" aria-label="Idioma / Language">
+      <span class="silk-strip__lang-label">LANG</span>
+      <button class="dip" id="lang-switch" role="switch" aria-checked="false" aria-label="Cambiar idioma ES/EN — Switch language ES/EN">
+        <span class="dip__track" aria-hidden="true">
+          <span class="dip__mark">ES</span>
+          <span class="dip__mark">EN</span>
+        </span>
+        <span class="dip__actuator" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ U1 — FIRST VIEWPORT ══ -->
+    <section class="hero" id="hero">
+
+      <p class="hero__kicker silk-label">
+        <span data-lang="es">HOJA DE FABRICACIÓN · PERSONAL</span>
+        <span data-lang="en" hidden>FAB SHEET · PERSONAL</span>
+        <span class="hero__sheet">SHEET 1/1</span>
+      </p>
+
+      <div class="hero__grid">
+
+        <!-- The IC footprint -->
+        <div class="ic" id="u1">
+          <div class="ic__frame">
+            <span class="ic__pin1" aria-hidden="true"></span>
+            <div class="ic__pads ic__pads--left" aria-hidden="true"></div>
+            <div class="ic__pads ic__pads--right" aria-hidden="true"></div>
+            <div class="ic__body">
+              <p class="ic__designator">U1</p>
+              <h1 class="ic__name">Jesús<br>Briceño</h1>
+              <p class="ic__function">
+                <span data-lang="es">DESARROLLADOR · CURIOSO POR DISEÑO</span>
+                <span data-lang="en" hidden>DEVELOPER · CURIOUS BY DESIGN</span>
+              </p>
+            </div>
+          </div>
+          <ul class="ic__nets" aria-hidden="true">
+            <li>CODE</li><li>WEB</li><li>API</li><li>OPS</li>
+            <li>AI</li><li>LEARN</li><li>CRAFT</li><li>PLAY</li>
+          </ul>
+        </div>
+
+        <!-- Spec table -->
+        <div class="spec">
+          <table class="spec__table">
+            <caption class="silk-label spec__caption">
+              <span data-lang="es">ESPECIFICACIÓN</span>
+              <span data-lang="en" hidden>SPECIFICATION</span>
+            </caption>
+            <tbody>
+              <tr><th>DEVICE</th><td>U1 · JESÚS BRICEÑO</td></tr>
+              <tr><th>FUNCTION</th><td>
+                <span data-lang="es">Desarrollo de software</span>
+                <span data-lang="en" hidden>Software development</span>
+              </td></tr>
+              <tr><th>MODE</th><td>
+                <span data-lang="es">Aprendizaje continuo</span>
+                <span data-lang="en" hidden>Continuous learning</span>
+              </td></tr>
+              <tr><th>FIELD</th><td>DESARROLLO · IA</td></tr>
+              <tr><th>STATUS</th><td class="spec__status">
+                <span class="spec__led" aria-hidden="true"></span>
+                <span data-lang="es">Siempre curioso</span>
+                <span data-lang="en" hidden>Always curious</span>
+              </td></tr>
+            </tbody>
+          </table>
+          <div class="spec__fiducials" aria-hidden="true">
+            <span class="fiducial"></span><span class="fiducial"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- the trace carrying the clock pulse down to contact -->
+      <div class="trace" aria-hidden="true">
+        <span class="trace__via trace__via--top"></span>
+        <span class="trace__pulse"></span>
+        <span class="trace__via trace__via--bottom"></span>
+      </div>
+    </section>
+
+    <!-- ══ FUNCTIONAL DESCRIPTION ══ -->
+    <section class="section" id="descripcion">
+      <h2 class="section__title silk-label">
+        <span class="section__ref">SEC 01</span>
+        <span data-lang="es">DESCRIPCIÓN FUNCIONAL</span>
+        <span data-lang="en" hidden>FUNCTIONAL DESCRIPTION</span>
+      </h2>
+      <div class="section__prose">
+        <p data-lang="es">Soy desarrollador y me muevo entre tecnologías distintas con la misma curiosidad: me gusta entender cómo funcionan las cosas por dentro, construir con ellas y seguir aprendiendo.</p>
+        <p data-lang="en" hidden>I'm a developer who moves between different technologies with the same curiosity: I like understanding how things work on the inside, building with them, and keeping on learning.</p>
+        <p data-lang="es">Buena parte de mi tiempo lo dedico a investigar y experimentar, especialmente en el mundo del desarrollo y la inteligencia artificial: probar herramientas nuevas, romperlas para ver por qué se rompen y convertirlas en algo útil.</p>
+        <p data-lang="en" hidden>A good share of my time goes into researching and experimenting — especially in software development and artificial intelligence: trying new tools, breaking them to see why they break, and turning them into something useful.</p>
+      </div>
+    </section>
+
+    <!-- ══ PARTS LIST ══ -->
+    <section class="section" id="partes">
+      <h2 class="section__title silk-label">
+        <span class="section__ref">SEC 02</span>
+        <span data-lang="es">LISTA DE PIEZAS</span>
+        <span data-lang="en" hidden>PARTS LIST</span>
+      </h2>
+      <table class="bom">
+        <thead>
+          <tr>
+            <th scope="col">REF</th>
+            <th scope="col"><span data-lang="es">CAMPO</span><span data-lang="en" hidden>FIELD</span></th>
+            <th scope="col"><span data-lang="es">NOTA</span><span data-lang="en" hidden>NOTE</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bom__ref">R1</td>
+            <td><span data-lang="es">Desarrollo web</span><span data-lang="en" hidden>Web development</span></td>
+            <td class="bom__note"><span data-lang="es">Interfaces que se disfrutan</span><span data-lang="en" hidden>Interfaces worth enjoying</span></td>
+          </tr>
+          <tr>
+            <td class="bom__ref">C1</td>
+            <td><span data-lang="es">Backend &amp; APIs</span><span data-lang="en" hidden>Backend &amp; APIs</span></td>
+            <td class="bom__note"><span data-lang="es">La lógica que hay detrás</span><span data-lang="en" hidden>The logic underneath</span></td>
+          </tr>
+          <tr>
+            <td class="bom__ref">L1</td>
+            <td><span data-lang="es">Infraestructura</span><span data-lang="en" hidden>Infrastructure</span></td>
+            <td class="bom__note"><span data-lang="es">Docker, Linux y automatización</span><span data-lang="en" hidden>Docker, Linux &amp; automation</span></td>
+          </tr>
+          <tr>
+            <td class="bom__ref">U2</td>
+            <td><span data-lang="es">Inteligencia artificial</span><span data-lang="en" hidden>Artificial intelligence</span></td>
+            <td class="bom__note"><span data-lang="es">Investigación y experimentación</span><span data-lang="en" hidden>Research &amp; experimentation</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ══ TEST POINTS / CONTACT ══ -->
+    <section class="section" id="contacto">
+      <h2 class="section__title silk-label">
+        <span class="section__ref">SEC 03</span>
+        <span data-lang="es">PUNTOS DE PRUEBA · CONTACTO</span>
+        <span data-lang="en" hidden>TEST POINTS · CONTACT</span>
+      </h2>
+      <p class="section__lead">
+        <span data-lang="es">Sonda donde quieras hacer contacto:</span>
+        <span data-lang="en" hidden>Probe wherever you want to make contact:</span>
+      </p>
+      <ul class="tps">
+        <li>
+          <a class="tp" href="https://github.com/jesusjbriceno" target="_blank" rel="noopener me">
+            <span class="tp__pad" aria-hidden="true"><span class="tp__ring"></span></span>
+            <span class="tp__meta">
+              <span class="tp__ref">TP1</span>
+              <span class="tp__name">GitHub</span>
+              <span class="tp__net">github.com/jesusjbriceno</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="tp" href="https://www.linkedin.com/in/jesusjbriceno/" target="_blank" rel="noopener me">
+            <span class="tp__pad" aria-hidden="true"><span class="tp__ring"></span></span>
+            <span class="tp__meta">
+              <span class="tp__ref">TP2</span>
+              <span class="tp__name">LinkedIn</span>
+              <span class="tp__net">linkedin.com/in/jesusjbriceno</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="tp" href="mailto:contact@jesusjbriceno.dev">
+            <span class="tp__pad" aria-hidden="true"><span class="tp__ring"></span></span>
+            <span class="tp__meta">
+              <span class="tp__ref">TP3</span>
+              <span class="tp__name">Email</span>
+              <span class="tp__net">contact@jesusjbriceno.dev</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER STRIP ══ -->
+  <footer class="silk-strip silk-strip--footer">
+    <p class="silk-strip__id">
+      © 2026 JESÚS BRICEÑO ·
+      <span data-lang="es">SIN COOKIES · SIN TRACKERS</span>
+      <span data-lang="en" hidden>NO COOKIES · NO TRACKERS</span>
+    </p>
+    <p class="silk-strip__rev" data-lang="es">SONDAS INACTIVAS · PROBE OK</p>
+    <p class="silk-strip__rev" data-lang="en" hidden>NO ACTIVE PROBES · PROBE OK</p>
+  </footer>
+
+  <!-- fiducials -->
+  <span class="fiducial fiducial--tl" aria-hidden="true"></span>
+  <span class="fiducial fiducial--tr" aria-hidden="true"></span>
+  <span class="fiducial fiducial--bl" aria-hidden="true"></span>
+  <span class="fiducial fiducial--br" aria-hidden="true"></span>
+
+</div>
+
+<script src="/js/lang.js"></script>
+</body>
+</html>
