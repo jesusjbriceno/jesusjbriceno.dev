@@ -12,9 +12,11 @@
   --dust-1: #b9b6ac;
   --dust-2: #7d7b74;
   --dust-3: #4a4944;
-  --dust-4: #2b2a27;
   --amber: #e8a33d;
   --f-bit: "Silkscreen", ui-monospace, monospace;
+  /* the world commits to two sizes: display + one text size */
+  --display: clamp(1.5rem, 5.2vw, 3.4rem);
+  --text: .75rem;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,7 +50,7 @@ body {
   background-repeat: repeat;
 }
 .dust--far {
-  background-image: radial-gradient(circle, var(--dust-4) 1px, transparent 1.4px);
+  background-image: radial-gradient(circle, var(--dust-3) 1px, transparent 1.4px);
   background-size: 90px 70px;
   animation: drift 90s linear infinite;
 }
@@ -79,7 +81,7 @@ body {
   z-index: 2;
 }
 .void__board {
-  font-size: .72rem;
+  font-size: var(--text);
   letter-spacing: .5em;
   color: var(--dust-2);
 }
@@ -87,7 +89,7 @@ body {
   background: none;
   border: 0;
   font-family: var(--f-bit);
-  font-size: .72rem;
+  font-size: var(--text);
   letter-spacing: .3em;
   color: var(--dust-2);
   cursor: pointer;
@@ -117,7 +119,7 @@ html[lang="en"] .void__lang-opt:last-child {
 }
 
 .void__name {
-  font-size: clamp(1.5rem, 5.2vw, 3.4rem);
+  font-size: var(--display);
   letter-spacing: .12em;
   color: var(--dust-0);
   text-shadow: 0 0 24px rgba(242, 239, 230, .28);
@@ -135,7 +137,7 @@ html[lang="en"] .void__lang-opt:last-child {
 @keyframes caret-blink { 50% { opacity: 0; } }
 
 .void__role {
-  font-size: clamp(.62rem, 1.4vw, .8rem);
+  font-size: var(--text);
   letter-spacing: .42em;
   color: var(--dust-1);
 }
@@ -148,15 +150,15 @@ html[lang="en"] .void__lang-opt:last-child {
   gap: 1rem;
   margin-top: 1.4rem;
 }
-.queue__item { font-size: clamp(.6rem, 1.5vw, .85rem); }
+.queue__item { font-size: var(--text); }
 .queue__item--d1 { color: var(--dust-1); letter-spacing: .3em; }
 .queue__item--d2 { color: var(--dust-2); letter-spacing: .4em; }
 .queue__item--d3 { color: var(--dust-3); letter-spacing: .5em; }
 .queue__item--d4 { color: var(--dust-3); letter-spacing: .6em; }
 
 .void__line { max-width: 60ch; }
-.void__line--d2 { color: var(--dust-2); letter-spacing: .28em; font-size: .68rem; }
-.void__line--d3 { color: var(--dust-3); letter-spacing: .36em; font-size: .64rem; }
+.void__line--d2 { color: var(--dust-2); letter-spacing: .28em; font-size: var(--text); }
+.void__line--d3 { color: var(--dust-3); letter-spacing: .36em; font-size: var(--text); }
 
 /* contact: front plane again, amber on probe */
 .void__contact {
@@ -169,7 +171,7 @@ html[lang="en"] .void__lang-opt:last-child {
 .void__link {
   color: var(--dust-1);
   text-decoration: none;
-  font-size: .72rem;
+  font-size: var(--text);
   letter-spacing: .34em;
   padding: .4rem .2rem;
   transition: color .2s, text-shadow .2s;
@@ -183,11 +185,22 @@ html[lang="en"] .void__lang-opt:last-child {
 .void__foot {
   padding: 1.2rem;
   text-align: center;
-  font-size: .58rem;
+  font-size: var(--text);
   letter-spacing: .4em;
-  color: var(--dust-4);
+  color: var(--dust-3);
   position: relative;
   z-index: 2;
+}
+
+/* narrow widths shed depth steps, never brightness steps */
+@media (max-width: 640px) {
+  .queue__item--d2,
+  .queue__item--d3,
+  .queue__item--d4 { letter-spacing: .3em; }
+  .void__line--d3 { letter-spacing: .28em; }
+  .void__name { letter-spacing: .06em; }
+  .void__role { letter-spacing: .3em; }
+  .void__link { letter-spacing: .24em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
