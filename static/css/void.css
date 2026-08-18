@@ -39,7 +39,6 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
 }
 
 /* ── drifting dust fields (three depths, rear-only motion) ──────── */
@@ -76,7 +75,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 1.4rem clamp(1.2rem, 4vw, 3rem);
+  padding: 1rem clamp(1.2rem, 4vw, 3rem);
   position: relative;
   z-index: 2;
 }
@@ -104,23 +103,25 @@ html[lang="en"] .void__lang-opt:last-child {
 .void__lang:hover, .void__lang:focus-visible { color: var(--dust-1); }
 .void__lang:focus-visible { outline: 1px solid var(--amber); outline-offset: 4px; }
 
-/* ── main queue ─────────────────────────────────────────────────── */
+/* ── main queue ───────────────────────────────────────────────────
+   mobile-first: content flows naturally and the page scrolls when it
+   needs to; margin-block:auto keeps the centered title-screen feel
+   whenever everything still fits one viewport */
 .void__main {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 1.6rem;
-  padding: 3rem 1.2rem;
+  gap: 1.1rem;
+  padding: 2rem 1.2rem 2.5rem;
+  margin-block: auto;
   position: relative;
   z-index: 2;
 }
 
 .void__name {
   font-size: var(--display);
-  letter-spacing: .12em;
+  letter-spacing: .06em;
   color: var(--dust-0);
   text-shadow: 0 0 24px rgba(242, 239, 230, .28);
   display: flex;
@@ -138,7 +139,7 @@ html[lang="en"] .void__lang-opt:last-child {
 
 .void__role {
   font-size: var(--text);
-  letter-spacing: .42em;
+  letter-spacing: .3em;
   color: var(--dust-1);
 }
 
@@ -147,18 +148,18 @@ html[lang="en"] .void__lang-opt:last-child {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 1.4rem;
+  gap: .8rem;
+  margin-top: 1rem;
 }
 .queue__item { font-size: var(--text); }
 .queue__item--d1 { color: var(--dust-1); letter-spacing: .3em; }
-.queue__item--d2 { color: var(--dust-2); letter-spacing: .4em; }
-.queue__item--d3 { color: var(--dust-3); letter-spacing: .5em; }
-.queue__item--d4 { color: var(--dust-3); letter-spacing: .6em; }
+.queue__item--d2 { color: var(--dust-2); letter-spacing: .3em; }
+.queue__item--d3 { color: var(--dust-3); letter-spacing: .3em; }
+.queue__item--d4 { color: var(--dust-3); letter-spacing: .3em; }
 
 .void__line { max-width: 60ch; }
 .void__line--d2 { color: var(--dust-2); letter-spacing: .28em; font-size: var(--text); }
-.void__line--d3 { color: var(--dust-3); letter-spacing: .36em; font-size: var(--text); }
+.void__line--d3 { color: var(--dust-3); letter-spacing: .28em; font-size: var(--text); }
 
 /* contact: front plane again, amber on probe */
 .void__contact {
@@ -166,13 +167,13 @@ html[lang="en"] .void__lang-opt:last-child {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.2rem 2.6rem;
-  margin-top: 2rem;
+  margin-top: 1.2rem;
 }
 .void__link {
   color: var(--dust-1);
   text-decoration: none;
   font-size: var(--text);
-  letter-spacing: .34em;
+  letter-spacing: .24em;
   padding: .4rem .2rem;
   transition: color .2s, text-shadow .2s;
 }
@@ -181,6 +182,101 @@ html[lang="en"] .void__lang-opt:last-child {
   text-shadow: 0 0 12px rgba(232, 163, 61, .6);
 }
 .void__link:focus-visible { outline: 1px solid var(--amber); outline-offset: 4px; }
+
+/* ── the probe form: fields ride baselines, focus is the amber signal ── */
+.probe {
+  width: min(34rem, 100%);
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.probe__title {
+  font-size: var(--text);
+  letter-spacing: .42em;
+  color: var(--dust-2);
+}
+.probe__fields {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.probe__label {
+  font-size: var(--text);
+  letter-spacing: .3em;
+  color: var(--dust-3);
+  display: block;
+  text-align: left;
+  margin-bottom: .3rem;
+  cursor: text;
+}
+.probe__input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--dust-3);
+  color: var(--dust-1);
+  font-family: var(--f-bit);
+  font-size: var(--text);
+  letter-spacing: .14em;
+  padding: .5rem .1rem .45rem;
+  caret-color: var(--amber);
+  transition: border-color .2s, box-shadow .2s;
+}
+.probe__input::placeholder { color: var(--dust-3); }
+.probe__input:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 10px 16px -14px rgba(232, 163, 61, .55);
+}
+.probe__input--message { resize: vertical; min-height: 3rem; }
+
+/* honeypot: off-screen but present in the DOM */
+.probe__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+.probe__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+.probe__send {
+  background: none;
+  border: 0;
+  color: var(--dust-1);
+  font-family: var(--f-bit);
+  font-size: var(--text);
+  letter-spacing: .42em;
+  padding: .4rem .2rem;
+  cursor: pointer;
+  transition: color .2s, text-shadow .2s;
+}
+.probe__send:hover, .probe__send:focus-visible {
+  color: var(--amber);
+  text-shadow: 0 0 12px rgba(232, 163, 61, .6);
+}
+.probe__send:focus-visible { outline: 1px solid var(--amber); outline-offset: 4px; }
+.probe__send[disabled] {
+  color: var(--dust-3);
+  text-shadow: none;
+  cursor: wait;
+}
+.probe__status {
+  font-size: var(--text);
+  letter-spacing: .24em;
+  min-height: 1.4em;
+  color: var(--dust-1);
+}
+.probe__status--ok {
+  color: var(--amber);
+  text-shadow: 0 0 10px rgba(232, 163, 61, .5);
+}
+.probe__status--err { color: var(--dust-1); }
 
 .void__foot {
   padding: 1.2rem;
@@ -192,15 +288,17 @@ html[lang="en"] .void__lang-opt:last-child {
   z-index: 2;
 }
 
-/* narrow widths shed depth steps, never brightness steps */
-@media (max-width: 640px) {
-  .queue__item--d2,
-  .queue__item--d3,
-  .queue__item--d4 { letter-spacing: .3em; }
-  .void__line--d3 { letter-spacing: .28em; }
-  .void__name { letter-spacing: .06em; }
-  .void__role { letter-spacing: .3em; }
-  .void__link { letter-spacing: .24em; }
+/* mobile-first: the base above carries the narrow-shed tracking;
+   wider screens recover the full letterspacing depth ladder
+   (brightness steps stay intact at every width) */
+@media (min-width: 641px) {
+  .void__name { letter-spacing: .12em; }
+  .void__role { letter-spacing: .42em; }
+  .queue__item--d2 { letter-spacing: .4em; }
+  .queue__item--d3 { letter-spacing: .5em; }
+  .queue__item--d4 { letter-spacing: .6em; }
+  .void__line--d3 { letter-spacing: .36em; }
+  .void__link { letter-spacing: .34em; }
 }
 
 @media (prefers-reduced-motion: reduce) {

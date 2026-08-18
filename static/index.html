@@ -75,6 +75,39 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <a class="void__link" href="mailto:contacto@jesusjbriceno.dev">EMAIL</a>
     </nav>
 
+    <form class="probe" id="contact-form" novalidate>
+      <p class="probe__title">
+        <span data-lang="es">DEJA UNA SEÑAL</span>
+        <span data-lang="en" hidden>LEAVE A SIGNAL</span>
+      </p>
+      <div class="probe__fields">
+        <label class="probe__label" for="probe-name">
+          <span data-lang="es">NOMBRE</span><span data-lang="en" hidden>NAME</span>
+        </label>
+        <input class="probe__input" id="probe-name" name="name" type="text" maxlength="100" autocomplete="name" required>
+        <label class="probe__label" for="probe-email">
+          <span data-lang="es">EMAIL</span><span data-lang="en" hidden>EMAIL</span>
+        </label>
+        <input class="probe__input" id="probe-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+        <label class="probe__label" for="probe-message">
+          <span data-lang="es">MENSAJE</span><span data-lang="en" hidden>MESSAGE</span>
+        </label>
+        <textarea class="probe__input probe__input--message" id="probe-message" name="message" maxlength="5000" rows="3" required></textarea>
+      </div>
+      <!-- honeypot: invisible to humans, bait for bots -->
+      <p class="probe__hp" aria-hidden="true">
+        <label for="probe-website">WEBSITE</label>
+        <input id="probe-website" name="honeypot" type="text" tabindex="-1" autocomplete="off">
+      </p>
+      <div class="probe__action">
+        <button class="probe__send" id="probe-send" type="submit">
+          <span data-lang="es">TRANSMITIR</span>
+          <span data-lang="en" hidden>TRANSMIT</span>
+        </button>
+        <p class="probe__status" id="probe-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
   </main>
 
   <footer class="void__foot">
@@ -85,5 +118,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </div>
 
 <script src="/js/lang.js"></script>
+<script src="/js/contact.js"></script>
 </body>
 </html>
